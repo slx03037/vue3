@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    //添加 "composite": true 是必要的，因为根据之前的错误信息，
+    // 这个文件被 tsconfig.json 引用，必须设置为复合项目
+    "composite": true,
+    //"forceConsistentCasingInFileNames": true 可以避免跨平台文件名大小写问题
+    "forceConsistentCasingInFileNames": true,
+    //添加 "strict": true 可以启用所有严格类型检查，提高代码质量
+    "strict": true,
+
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    "target": "es2022",
+    "lib": ["ES2022"],
+    "types": ["node"],
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+     /**
+      * tsconfig.json 通过 references 引用了 tsconfig.node.json
+      * 但 tsconfig.node.json 的配置很可能缺少 "composite": true 或设置了 "noEmit": true
+      */
+    //"noEmit": true,
+    /**
+      *1.allowImportingTsExtensions 允许在代码中直接导入 .ts 文件，而不需要省略扩展名
+      *2.这个选项仅适用于不需要生成 JavaScript 输出的场景，因为生成的 .js 文件中不应包含 .ts 扩展名的导入
+      *3.因此，TypeScript 要求必须同时设置以下选项之一
+      *  .noEmit: true - 不生成任何输出文件
+      *  .emitDeclarationOnly: true - 只生成 .d.ts 声明文件
+      *  .rewriteRelativeImportExtensions: true - 在输出时重写相对导入的扩展名
+      */
+    //第一种方案  
+    //"allowImportingTsExtensions": true,
+    //第二种方案
+    "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+   
+
+    /* Linting */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["vite.config.ts","env.d.ts"]
+}
