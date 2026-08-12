@@ -28,6 +28,9 @@ defineProps<{ msg: string }>()
         <h1>First Vue 3 + TypeScript + Vite</h1>
           <!-- 嵌套子组件（后面会讲，这里先放个占位） -->
          <slot></slot>
+         <!-- 导入并使用Count组件（直接写组件名即可） -->
+        <count />
+        <!-- <HelloWorld /> -->
     </div>
 </template>
 
@@ -42,7 +45,8 @@ defineProps<{ msg: string }>()
   //示例：定义一个方法（带TS类型）
   const showTitle=()=>{return appTitle;}
 
-  import Count from '@/components/Count.vue'
+  import count from '@/components/Count.vue';
+  //import HelloWorld from './components/HelloWorld.vue';
 </script>
 
 <style scoped>
