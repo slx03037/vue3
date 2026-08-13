@@ -5,9 +5,9 @@
 </template>    
 
 <script setup lang="ts">
-    import tem from '@/components/basic/Tem.vue';
+    import tem from '@/components/day1/Tem.vue';
 
-    import att from '@/components/basic/Att.vue';
+    import att from '@/components/day1/Att.vue';
 
-    import eve from '@/components/basic/Eve.vue';
+    import eve from '@/components/day1/Eve.vue';
 </script>

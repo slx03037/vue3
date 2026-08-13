@@ -12,6 +12,7 @@
 
     <basic/>
     <refs/>
+    <day3/>
 </template>
 
 <script setup lang="ts">
@@ -19,6 +20,7 @@
     import {ref,computed} from 'vue';
     import basic from '@/components/Basic.vue';
     import refs from '@/components/Ref.vue';
+    import day3 from '@/components/Day3.vue';
 
 
     //2.声明响应式数据（带TS类型约束）
