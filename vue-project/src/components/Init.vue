@@ -13,14 +13,16 @@
     <basic/>
     <refs/>
     <day3/>
+    <day4/>
 </template>
 
 <script setup lang="ts">
     // 1. 导入Vue3的核心API：ref（声明响应式数据）、computed（计算属性）
     import {ref,computed} from 'vue';
-    import basic from '@/components/Basic.vue';
-    import refs from '@/components/Ref.vue';
+    import basic from '@/components/Day1.vue';
+    import refs from '@/components/Day2.vue';
     import day3 from '@/components/Day3.vue';
+    import day4 from '@/components/Day4.vue';
 
 
     //2.声明响应式数据（带TS类型约束）

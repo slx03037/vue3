@@ -45,7 +45,7 @@ defineProps<{ msg: string }>()
   //示例：定义一个方法（带TS类型）
   const showTitle=()=>{return appTitle;}
 
-  import count from '@/components/Count.vue';
+  import count from '@/components/Init.vue';
   //import HelloWorld from './components/HelloWorld.vue';
 </script>
 
