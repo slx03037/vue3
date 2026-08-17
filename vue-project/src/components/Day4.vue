@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <!-- <div>
         <parentProp1/>
     </div>
     <div>
@@ -28,7 +28,7 @@
     </div>
     <div>
         <comParent/>
-    </div>
+    </div> -->
 
 
 
@@ -60,6 +60,30 @@
     <div>
         <n1Parent/>
     </div>
+
+    <div>
+        <m1Parent/>
+    </div>
+
+    <div>
+        <m2Demo/>
+    </div>
+
+    <div>
+        <m3Parent/>
+    </div>
+
+    <div>
+        <m4Parent/>
+    </div>
+
+    <div>
+        <n1EPrarent/>
+    </div>
+
+    <div>
+        <n2Prarent/>
+    </div>
 </template>    
 
 <script setup lang="ts">
@@ -87,5 +111,18 @@
     import param1Parent from '@/components/day4/emits/Param1Parent.vue';
     //day4 emit
     import n1EmparentProp from '@/components/day4/emits/node2/N1EmParent.vue';
+
+
+    //model
+    import m1Parent from '@/components/day4/model/M1Parent.vue';
+    import m2Demo from '@/components/day4/model/M2Demo.vue';
+    import m3Parent from '@/components/day4/model/M3Parent.vue';
+    import m4Parent from '@/components/day4/model/M4Parent.vue';
+
+    //defineExpose — 子组件暴露方法
+    import n1EPrarent from '@/components/day4/expose/N1EPrarent.vue';
+
+    //ref
+     import n2Prarent from '@/components/day4/ref/N2Parent.vue';
 </script>
 
