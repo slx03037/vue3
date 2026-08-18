@@ -24,7 +24,8 @@
     // import refs from '@/components/Day2.vue';
     // import day3 from '@/components/Day3.vue';
     // import day4 from '@/components/Day4.vue';
-    import day5 from '@/components/Day5.vue';
+    //import day5 from '@/components/Day5.vue';
+    import day6 from '@/components/Day6.vue';
 
 
     //2.声明响应式数据（带TS类型约束）
