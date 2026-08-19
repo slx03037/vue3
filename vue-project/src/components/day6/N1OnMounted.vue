@@ -1,14 +1,18 @@
 <template>
-    <div>
+    <div ref="el">
         <h1>onMounted</h1>
+        <p>{{ el }}</p>
     </div>
 </template>
 
 <script setup lang="ts">
-import {  ComponentInternalInstance} from 'vue';
+import { ref, onMounted} from 'vue';
 
-function onMounted(callback: () => void, target?: ComponentInternalInstance | null): void{
-    // 在组件挂载后执行的代码
+const el = ref<string>()
+
+
+onMounted(() => {
     console.log('组件已挂载')
-}
+})
+
 </script>
