@@ -15,7 +15,7 @@
     <day3/>
     <day4/> -->
     <!-- <day5/> -->
-     <day6/>
+     <day7/>
 </template>
 
 <script setup lang="ts">
@@ -26,7 +26,8 @@
     // import day3 from '@/components/Day3.vue';
     // import day4 from '@/components/Day4.vue';
     //import day5 from '@/components/Day5.vue';
-    import day6 from '@/components/Day6.vue';
+    //import day6 from '@/components/Day6.vue';
+    import day7 from '@/components/Day7.vue';
 
 
     //2.声明响应式数据（带TS类型约束）
