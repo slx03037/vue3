@@ -1,7 +1,40 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "compilerOptions": {
+      "target": "ES2022",
+      "useDefineForClassFields": true,
+      "module": "ESNext",
+      "moduleResolution": "bundler",
+      "ignoreDeprecations": "6.0",
+      "strict": true, // 开启严格模式，TS类型检查更严格，减少bug
+      "jsx": "preserve",
+      "sourceMap": true,
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "esModuleInterop": true,
+      "lib": ["ES2022", "DOM"],
+      "skipLibCheck": true,
+      /**
+        *1.不同操作系统对文件名大小写的处理方式不同
+        *   .Windows 系统不区分文件名大小写（MyFile.js 和 myfile.js 被视为同一文件）
+        *   .Linux/macOS 系统区分文件名大小写（MyFile.js 和 myfile.js 是不同文件）
+        *2.如果代码中导入文件时使用的大小写与实际文件名不一致，可能导致：
+        *   .在 Windows 上正常工作，但在 Linux/macOS 上失败
+        *   .或者在团队协作中，不同开发者使用不同操作系统时出现问题
+        *3.启用 forceConsistentCasingInFileNames 选项可以让 TypeScript 在编译时检查并警告这类问题
+        */
+      "forceConsistentCasingInFileNames": true,
+      /**
+        * tsconfig.json 通过 references 引用了 tsconfig.node.json
+        * 但 tsconfig.node.json 的配置很可能缺少 "composite": true 或设置了 "noEmit": true
+        */
+      //"noEmit": true,
+      // 配置路径别名，和vite.config.ts保持一致
+      "baseUrl": "./",
+      "paths": {
+        "@/*": ["src/*"]
+      },
+       "types": ["vite/client"],
+    },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
