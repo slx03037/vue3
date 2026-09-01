@@ -29,6 +29,7 @@ console.log('路由元信息：', route.meta)
   <!-- 强制刷新路由 -->
   <RouterLink to="/bird" replace>小鸟（替换历史）</RouterLink>
   <RouterLink to="/human" >用户</RouterLink>
+  <RouterLink :to="{ name : 'transportation'}" >交通工具</RouterLink>
   </nav>
   <!-- 路由页面渲染出口 -->
   <RouterView />

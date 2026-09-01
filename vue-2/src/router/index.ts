@@ -5,6 +5,7 @@ import  DogRoutes  from "./modules/dog";
 import  CatRouts  from "./modules/cat";
 import  PersonRoutes  from "./modules/person";
 import  HumanRoutes  from "./modules/human";
+import TransportationRoutes from "./modules/Transportation"
 
 export const OtherRouter : Array<RouteRecordRaw> = [
 {
@@ -53,7 +54,7 @@ export const OtherRouter : Array<RouteRecordRaw> = [
     }
 ]
 
-const routes: Array<RouteRecordRaw> = [...OtherRouter,...BirdRoutes,...DogRoutes,...CatRouts,...PersonRoutes,...HumanRoutes];
+const routes: Array<RouteRecordRaw> = [...OtherRouter,...BirdRoutes,...DogRoutes,...CatRouts,...PersonRoutes,...HumanRoutes,...TransportationRoutes];
 
 
 const router = createRouter({

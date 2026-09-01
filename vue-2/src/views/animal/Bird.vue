@@ -14,11 +14,18 @@
         <RouterLink to="/cat" replate>3.go cat (替换历史)</RouterLink> 
 
         <button @click="goForward">Go Forward</button>
+
+         <button @click="goDashboard">goDashboard</button>
+
+         <button @click="goMap">goMap</button>
+
+          <button @click="goTiger">goTiger</button>
     </div>
 </template>    
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
+import { useRouter } from 'vue-router';
+import DashboardRoutes from '@/router/modules/dashboard'
 
 const router = useRouter()
 
@@ -26,4 +33,29 @@ const router = useRouter()
 const goForward = () => {
     router.go(1)
 }
+DashboardRoutes.forEach((x)=>{
+    router.addRoute(x);
+})
+
+router.addRoute({ name: 'tiger', path: '/tiger', component: ()=>import('@/views/animal/Tiger.vue')  })
+// 给已有父路由添加子路由
+router.addRoute('children', {
+  name: 'tigerSon',
+  path: '/tigerSon',
+  component: () => import('@/views/animal/TigerSon.vue'),
+  meta: { title: '老虎儿子', isAuth: true }
+})
+
+const goDashboard =()=>{
+    router.push({"name":"dashboard"})
+}
+
+const goMap =()=>{
+     router.push({"name":"map"})
+}
+
+const goTiger=()=>{
+    router.push({"name":"tigerSon"})
+}
+
 </script>
